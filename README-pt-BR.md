@@ -1,4 +1,4 @@
-# Catalog Consumer
+# Catalog API
 
 Este documento está disponível em [Inglês](https://github.com/lucsalm/catalog-api/blob/main/README.md), 
 mas também está disponível em [Português](https://github.com/lucsalm/catalog-api/blob/main/README-pt-BR.md).
@@ -59,9 +59,9 @@ Essa aplicação então insere e atualiza um arquivo em um bucket do AWS S3 para
     4. Crie um usuário no IAM:
         - Atribua as seguintes políticas:
         ```yaml
-        AmazonS3FullAccess
-        AmazonSQSFullAccess
-        AWSIoTDeviceDefenderPublishFindingsToSNSMitigationAction
+          AmazonS3FullAccess
+          AmazonSQSFullAccess
+          AWSIoTDeviceDefenderPublishFindingsToSNSMitigationAction
        ```
         - Crie credenciais de chave de acesso.
 
@@ -87,8 +87,8 @@ Essa aplicação então insere e atualiza um arquivo em um bucket do AWS S3 para
         docker-compose up
         ```
 
-6. Após os contêineres serem construídos e a aplicação ser iniciada,
-   acesse [Swagger](http://localhost:8080/swagger-ui/index.html) para visualizar sua documentação. Você deverá ver a seguinte tela:
+6. Após os contêineres serem construídos e a aplicação será iniciada,
+   acesse [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html) para visualizar sua documentação. Você deverá ver a seguinte tela:
    screen:![Swagger-api](https://raw.githubusercontent.com/lucsalm/catalog-api/main/img/swagger.png)
 
 **Observações:**

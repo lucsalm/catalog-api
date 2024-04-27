@@ -1,4 +1,4 @@
-# Catalog Consumer
+# Catalog API
 
 This document is available in [English](https://github.com/lucsalm/catalog-api/blob/main/README.md), but it's also
 available in [Portuguese](https://github.com/lucsalm/catalog-api/blob/main/README-pt-BR.md).
@@ -59,9 +59,9 @@ MongoDB data. This application then inserts and updates a file in an AWS S3 buck
     4. Create a user on IAM:
         - Give it the following policies:
         ```yaml
-        AmazonS3FullAccess
-        AmazonSQSFullAccess
-        AWSIoTDeviceDefenderPublishFindingsToSNSMitigationAction
+          AmazonS3FullAccess
+          AmazonSQSFullAccess
+          AWSIoTDeviceDefenderPublishFindingsToSNSMitigationAction
        ```
         - Create an Access Key Credentials.
    
@@ -88,8 +88,8 @@ MongoDB data. This application then inserts and updates a file in an AWS S3 buck
         ```
 
 6. After the containers are built and the application is started,
-   access [Swagger](http://localhost:8080/swagger-ui/index.html) to view its documentation. You should see the following
-   screen:![Swagger-Consumer](https://raw.githubusercontent.com/lucsalm/catalog-api/main/swagger.png)
+   access [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html) to view its documentation. You should see the following
+   screen:![Swagger-api](https://raw.githubusercontent.com/lucsalm/catalog-api/main/img/swagger.png)
 
 **Notes:**
 
