@@ -1,0 +1,25 @@
+db:
+  host: localhost
+
+server:
+  port: 8080
+  contextPath: catalog-api
+
+spring:
+  application:
+    name: catalog-api
+
+mongodb:
+  connection:
+    uri: mongodb://${db.host}:27017/
+    database: catalog
+
+aws:
+  region: AWS_REGION
+  sns:
+    topic:
+      arn: AWS_SNS_TOPIC_ARN
+  credentials:
+    key:
+      access: AWS_CREDENTIALS_KEY_ACCESS
+      secret: AWS_CREDENTIALS_KEY_SECRET
