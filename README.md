@@ -67,7 +67,7 @@ Essa aplicação então insere e atualiza um arquivo em um bucket do AWS S3 para
 
 2. Verifique se o Docker está instalado em sua máquina.
 3. Clone este repositório em seu ambiente local.
-4. Configure suas variáveis de ambiente da AWS no arquivo `docker-compose.yaml`:
+4. Configure suas variáveis de ambiente da AWS no arquivo [docker-compose.yaml](docker-compose.yaml):
    ```yaml
      AWS_REGION
      AWS_SNS_TOPIC_ARN
@@ -88,10 +88,10 @@ Essa aplicação então insere e atualiza um arquivo em um bucket do AWS S3 para
         ```
 
 6. Após os contêineres serem construídos e a aplicação será iniciada,
-   acesse [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html) para visualizar sua documentação. Você deverá ver a seguinte tela:
+   acesse [Swagger](http://localhost:8080/swagger-ui/index.html) para visualizar sua documentação. Você deverá ver a seguinte tela:
    screen:![Swagger-api](img/swagger.png)
 
 **Observações:**
 
 - Certifique-se de que as portas `8080` e `8081` não estão sendo usadas por outra aplicação em seu sistema para evitar
-  conflitos. Se necessário, você pode modificar o mapeamento de porta no arquivo `docker-compose.yml`.
+  conflitos. Se necessário, você pode modificar o mapeamento de porta no arquivo [docker-compose.yaml](docker-compose.yaml).
