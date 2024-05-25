@@ -7,21 +7,21 @@ import com.lucsalmd.catalogapi.model.entity.Category;
 import com.lucsalmd.catalogapi.publisher.SNSPublisher;
 import com.lucsalmd.catalogapi.repository.CategoryRepository;
 import com.lucsalmd.catalogapi.service.CategoryService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 
 @Service
+@RequiredArgsConstructor
 public class CategoryServiceImpl implements CategoryService {
 
-    @Autowired
-    private CategoryRepository categoryRepository;
+    
+    private final CategoryRepository categoryRepository;
 
-    @Autowired
-    private SNSPublisher publisher;
+    
+    private final SNSPublisher publisher;
 
     public List<Category> getCategoriesByOwner(String ownerId) {
         List<Category> categories = categoryRepository.findAllCategoryByOwnerId(ownerId);

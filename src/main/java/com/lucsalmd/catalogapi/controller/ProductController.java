@@ -2,7 +2,6 @@ package com.lucsalmd.catalogapi.controller;
 
 import com.lucsalmd.catalogapi.exception.dto.BusinessError;
 import com.lucsalmd.catalogapi.model.dto.ProductRequestDTO;
-import com.lucsalmd.catalogapi.model.entity.Category;
 import com.lucsalmd.catalogapi.model.entity.Product;
 import com.lucsalmd.catalogapi.service.ProductService;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
@@ -11,21 +10,20 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Set;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/product")
 @Tag(name = "Product", description = "Product Operations")
 public class ProductController {
 
-    @Autowired
-    private ProductService service;
+    private final ProductService service;
 
     @PostMapping("/{ownerId}")
     @ResponseStatus(HttpStatus.CREATED)
@@ -75,7 +73,7 @@ public class ProductController {
     public void deleteProduct(@PathVariable String productId){
         service.deleteProduct(productId);
     }
-    @GetMapping("/{categoryId}")
+    @GetMapping("/{ownerId}")
     @ResponseStatus(HttpStatus.OK)
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200",

@@ -9,24 +9,21 @@ import com.lucsalmd.catalogapi.publisher.SNSPublisher;
 import com.lucsalmd.catalogapi.repository.CategoryRepository;
 import com.lucsalmd.catalogapi.repository.ProductRepository;
 import com.lucsalmd.catalogapi.service.ProductService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 
 @Service
+@RequiredArgsConstructor
 public class ProductServiceImpl implements ProductService {
-
-    @Autowired
-    private ProductRepository productRepository;
-
-    @Autowired
-    private CategoryRepository categoryRepository;
-
-    @Autowired
-    private SNSPublisher publisher;
+    
+    private final  ProductRepository productRepository;
+    
+    private final  CategoryRepository categoryRepository;
+    
+    private final  SNSPublisher publisher;
 
     public List<Product> getProductsByOwner(String ownerId){
         List<Product> products = productRepository.findAllProductsByOwnerId(ownerId);

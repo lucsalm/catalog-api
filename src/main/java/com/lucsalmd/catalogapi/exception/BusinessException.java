@@ -8,8 +8,8 @@ import org.springframework.http.HttpStatus;
 @Getter
 public class BusinessException extends RuntimeException {
 
-    private final BusinessError error;
-    private final HttpStatus status;
+    private final transient BusinessError error;
+    private final transient HttpStatus status;
 
     public BusinessException(BusinessErrorEnum errorEnum) {
         this.error = new BusinessError(errorEnum);
